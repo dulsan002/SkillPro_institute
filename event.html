@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillPro Institute</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .container {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        padding-top: 100px;
+      }
+      .calendar {
+        width: 300px;
+        background: white;
+        color: black;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .calendar h2 {
+        margin-bottom: 10px;
+      }
+      .calendar .date {
+        font-size: 18px;
+        font-weight: bold;
+        color: #1976d2;
+      }
+      .event-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        flex: 1;
+      }
+      .event-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      .event-card .tag {
+        display: inline-block;
+        background: #1976d2;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        margin-bottom: 8px;
+      }
+      .event-card h3 {
+        margin: 0 0 10px;
+      }
+      .progress-bar {
+        height: 10px;
+        background: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+      .progress-fill {
+        height: 100%;
+        background: #4caf50;
+        width: 0%;
+      }
+      .register-btn {
+        background: #1976d2;
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      .register-btn:hover {
+        background: #125ea2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="images/graduate.png" alt="logo" />
+        <h2>SkillPro Institute</h2>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course.html">Courses</a>
+        <a href="event.html">Events</a>
+        <a href="about.php">About</a>
+        <a href="contact.html">Contact</a>
+        <button onclick="login()">Login</button>
+      </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <div class="container">
+      <div class="calendar">
+        <h2>Event Calendar</h2>
+        <div class="date" id="calendar-date">Loading...</div>
+      </div>
+      <div id="events-container" class="event-grid"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>SkillPro Institute</h3>
+          <p>
+            Empowering futures through quality vocational education across Sri
+            Lanka.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="course.html">Our Courses</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our Branches</h4>
+          <ul>
+            <li>📍 Colombo Campus</li>
+            <li>📍 Kandy Campus</li>
+            <li>📍 Matara Campus</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p>📞 +94 11 234 5678</p>
+          <p>✉️ info@skillpro.lk</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SkillPro Institute. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="event.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

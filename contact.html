@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillPro Institute</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="contact.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="logo">
+        <img src="images/graduate.png" alt="logo" />
+        <h2>SkillPro Institute</h2>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="course.html">Courses</a>
+        <a href="event.html">Events</a>
+        <a href="about.php">About</a>
+        <a href="contact.html">Contact</a>
+        <button onclick="login()">Login</button>
+      </nav>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <div class="container">
+      <form id="contactForm">
+        <h2>Send us a Message</h2>
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Email Address" required />
+        <input type="tel" name="phone" placeholder="Phone Number" />
+        <select name="branch" required>
+          <option value="">Select Branch</option>
+          <option value="Colombo">Colombo</option>
+          <option value="Kandy">Kandy</option>
+          <option value="Matara">Matara</option>
+        </select>
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="responseMsg"></p>
+      </form>
+
+      <div class="wrap">
+        <div class="sidebar">
+          <h3>Get in Touch</h3>
+          <p><strong>Main Line:</strong> +1 (234) 124 5678</p>
+          <p><strong>Email:</strong> info@elpuk.org</p>
+          <p><strong>Office Hours:</strong> Mon–Fri: 8AM–6PM</p>
+        </div>
+
+        <div class="dep-wrap">
+          <h3>Departments</h3>
+          <ul>
+            <li><strong>Admissions Office:</strong> Application inquiries</li>
+            <li><strong>Student Services:</strong> Support & resources</li>
+            <li><strong>Corporate Training:</strong> Business programs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <section class="branch-wrap">
+      <div class="branches-section">
+        <h2>Our Branches</h2>
+        <p class="subtitle">
+          Choose from our conveniently located campuses across Sri Lanka.
+        </p>
+        <div id="branchContainer" class="branch-grid"></div>
+      </div>
+    </section>
+    <div class="location-wrap">
+      <div class="location">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.0429358700176!2d79.85657247448258!3d6.885460668852359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25bc4fdc4eac3%3A0xfde7cffd35d72eb9!2sICBT%20Campus!5e0!3m2!1sen!2slk!4v1758517006857!5m2!1sen!2slk"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="location">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.4570459247702!2d80.63297137448524!3d7.302437713622745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3676df00217ff%3A0xac59999a6821007e!2sICBT%20Kandy%20Campus!5e0!3m2!1sen!2slk!4v1758517295551!5m2!1sen!2slk"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <div class="location">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3968.3264291711685!2d80.5440021744776!3d5.949678929566558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae138d380008769%3A0x9c771b60ec64c17a!2sICBT%20Southern%20Campus!5e0!3m2!1sen!2slk!4v1758517410982!5m2!1sen!2slk"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>SkillPro Institute</h3>
+          <p>
+            Empowering futures through quality vocational education across Sri
+            Lanka.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="course.html">Our Courses</a></li>
+            <li><a href="event.html">Events</a></li>
+            <li><a href="about.php">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Our Branches</h4>
+          <ul>
+            <li>📍 Colombo Campus</li>
+            <li>📍 Kandy Campus</li>
+            <li>📍 Matara Campus</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p>📞 +94 11 234 5678</p>
+          <p>✉️ info@skillpro.lk</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SkillPro Institute. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+
+          fetch("contact.php", {
+            method: "POST",
+            body: formData,
+          })
+            .then((res) => res.text())
+            .then((data) => {
+              document.getElementById("responseMsg").textContent = data;
+              this.reset();
+            })
+            .catch((err) => {
+              document.getElementById("responseMsg").textContent =
+                "Something went wrong!";
+            });
+        });
+    </script>
+  </body>
+</html>

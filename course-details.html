@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Course Details</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f7fafc;
+        margin: 0;
+        padding: 20px;
+      }
+      .course-details {
+        padding: 40px 20px;
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        color: #333;
+      }
+      .course-details h2 {
+        font-size: 2rem;
+        color: #319795;
+        margin-bottom: 20px;
+      }
+      .course-details h3 {
+        margin-top: 30px;
+        color: #2c7a7b;
+      }
+      .course-details ul {
+        list-style: disc;
+        padding-left: 20px;
+      }
+      .back-btn {
+        margin-top: 40px;
+        text-align: center;
+      }
+      .back-btn button {
+        padding: 10px 20px;
+        background-color: #319795;
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="course-details">
+      <div id="courseContent"></div>
+      <div class="back-btn">
+        <button onclick="goBack()">← Back to Courses</button>
+      </div>
+    </section>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const courseId = params.get("id");
+      const container = document.getElementById("courseContent");
+
+      if (!courseId) {
+        container.innerHTML = "<p>Invalid course ID.</p>";
+      } else {
+        fetch(`get_course_details.php?id=${courseId}`)
+          .then((res) => res.json())
+          .then((course) => {
+            if (course.error) {
+              container.innerHTML = `<p>${course.error}</p>`;
+              return;
+            }
+            const modules = course.modules ? JSON.parse(course.modules) : [];
+            const lectures = course.lectures ? JSON.parse(course.lectures) : [];
+            container.innerHTML = `
+        <h2>${course.title}</h2>
+        <p><strong>Category:</strong> ${course.category}</p>
+        <p><strong>Description:</strong> ${course.description}</p>
+        <p><strong>Duration:</strong> ${course.duration}</p>
+        <p><strong>Location:</strong> ${course.location}</p>
+        <p><strong>Start Date:</strong> ${course.startDate}</p>
+        <p><strong>Cost:</strong> ${course.cost}</p>
+        <h3>Modules</h3>
+        <ul>${modules.map((m) => `<li>${m}</li>`).join("")}</ul>
+        <h3>Lectures</h3>
+        <ul>${lectures.map((l) => `<li>${l}</li>`).join("")}</ul>
+      `;
+          })
+          .catch((err) => {
+            container.innerHTML = "<p>Failed to load course details.</p>";
+            console.error(err);
+          });
+      }
+
+      function goBack() {
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>
